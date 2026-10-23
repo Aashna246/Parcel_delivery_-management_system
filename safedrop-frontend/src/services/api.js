@@ -2,8 +2,7 @@ import axios from "axios";
 
 // One axios instance used by the whole app
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
-});
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",});
 
 // Before every request, attach the token (if we have one)
 api.interceptors.request.use((config) => {
